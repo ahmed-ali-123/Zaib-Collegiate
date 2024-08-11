@@ -444,7 +444,7 @@ p {
 }
 .scrollsection h1 span {
   color: white;
-  font-size: max(20px, 5vw);
+  font-size: max(16px, 5vw);
 }
 .about {
   padding: 20vw 5vw 5vw;
