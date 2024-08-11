@@ -134,6 +134,7 @@ function App() {
       color: "rgba(0, 0, 0, 0.425)",
       duration: 0.01,
     });
+
     newtimeline.to(".cover", {
       x: "100%",
       duration: 0.8,
@@ -250,6 +251,19 @@ function App() {
       stagger: 0.1,
       y: 10,
       ease: "power1.inOut",
+    });
+    gsap.from(".card", {
+      opacity: 0,
+      scale: 0.9,
+      duration: 1,
+      stagger: 0.1,
+      y: 10,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: ".coursesCards",
+        start: "top 60%",
+        end: "bottom 60%",
+      },
     });
   });
   return (
