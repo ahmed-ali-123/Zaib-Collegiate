@@ -679,7 +679,7 @@ function App() {
               <p className="courseDesc">
                 Master document creation with Microsoft Word. Learn advanced
                 formatting, templates, and collaboration tools. Enhance your
-                productivity with time-saving tips and tricks.
+                productivity with tips and tricks.
               </p>
               <span class="sub-title">3 Months</span>
             </div>
@@ -695,8 +695,8 @@ function App() {
               <h2 class="titleOfCard">MS Excel</h2>
               <p className="courseDesc">
                 Dive into data management with Microsoft Excel. Understand
-                formulas, pivot tables, and data visualization. Automate tasks
-                and make informed decisions using advanced features.
+                formulas, pivot tables, and data visualization. And make
+                informed decisions using advanced features.
               </p>
               <span class="sub-title">3 Months</span>
             </div>
