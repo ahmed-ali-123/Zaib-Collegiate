@@ -442,9 +442,13 @@ p {
   bottom: 0 !important;
   transform: rotate(180deg) translateY(calc(-100%)) !important;
 }
+.scrollsection h1 {
+  text-align: center;
+}
 .scrollsection h1 span {
   color: white;
-  font-size: max(16px, 5vw);
+  font-size: max(30px, 5vw);
+  line-height: 1.2;
 }
 .about {
   padding: 20vw 5vw 5vw;
