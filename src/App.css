@@ -657,6 +657,9 @@ p {
 }
 
 @media (max-width: 400px) {
+  .imagesdiv > * {
+    margin: 0;
+  }
   .titleOfCard {
     font-size: 35px;
   }
