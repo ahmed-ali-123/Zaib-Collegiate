@@ -87,7 +87,8 @@ function App() {
       const direction = index === 1 ? 1 : -1; // Reverse the second row
 
       // Set a random duration between 8 and 12 seconds for each row
-      const duration = index !== 1 ? 30 + Math.random() * 40 : 70;
+      let duration = index !== 1 ? 20 + Math.random() * 50 : 50;
+      console.log(duration);
 
       // Create a seamless scrolling animation using GSAP
       gsap

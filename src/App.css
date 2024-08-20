@@ -867,11 +867,14 @@ textarea {
   gap: 20px;
   font-size: 22px;
   margin: 50px 0 0 0;
+  max-width: 90vw;
+  flex-wrap: wrap;
 }
 .linksinfooter a {
   color: white;
   cursor: pointer;
   font-weight: 600;
+  text-wrap: nowrap;
 }
 .footer p {
   color: rgba(255, 255, 255, 0.822);
@@ -880,4 +883,18 @@ textarea {
 .textareaapan {
   display: inline-block;
   transform: translateY(-3px);
+}
+@media (max-width: 565px) {
+  .linksinfooter {
+    flex-direction: column;
+  }
+}
+@media (max-width: 344px) {
+  .maininfodiv h2 {
+    font-size: 25px;
+  }
+  .linksinfooter {
+    flex-direction: column;
+    margin-top: 30px;
+  }
 }
