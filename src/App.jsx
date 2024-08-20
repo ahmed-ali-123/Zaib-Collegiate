@@ -758,7 +758,7 @@ function App() {
             type="text"
             rows={5}
           />
-          <span className="input-border input-border-alt"></span>
+          <span className="textareaapan input-border input-border-alt"></span>
         </div>
         <button className="buttonincontact">
           <span class="shadow"></span>

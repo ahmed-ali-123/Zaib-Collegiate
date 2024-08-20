@@ -755,6 +755,8 @@ p {
 }
 textarea {
   resize: none;
+  margin-bottom: 0px !important;
+  padding-bottom: 0 !important;
 }
 .contact h1 {
   text-align: center;
@@ -874,4 +876,8 @@ textarea {
 .footer p {
   color: rgba(255, 255, 255, 0.822);
   text-align: center;
+}
+.textareaapan {
+  display: inline-block;
+  transform: translateY(-3px);
 }
