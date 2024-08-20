@@ -8,6 +8,9 @@
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
 }
+html {
+  scroll-behavior: smooth;
+}
 ::selection {
   background-color: rgba(255, 239, 17, 0.74); /* Highlight color */
   color: rgb(145, 16, 7); /* Text color */
@@ -18,6 +21,10 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
 }
 .logo img {
   width: 70px;
@@ -58,7 +65,7 @@ body {
 .links ul li {
   list-style: none;
   font-size: 30px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.13);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.363);
   padding: 10px 0;
   text-decoration: none;
   width: 0px;
@@ -74,7 +81,7 @@ nav ul li a {
   padding-left: 5px;
 }
 .links ul li:first-child {
-  border-top: 2px solid rgba(0, 0, 0, 0.13);
+  border-top: 2px solid rgba(0, 0, 0, 0.363);
 }
 .mainpage {
   min-height: calc(100vh - 140px);
@@ -262,7 +269,7 @@ p {
 .cover {
   height: 100%;
   width: 100%;
-  background: #ff8008; /* fallback for old browsers */
+  background: #ff8008;
   background: -webkit-linear-gradient(
     to right,
     #ffc837,
@@ -416,7 +423,8 @@ p {
     padding: 20px 20px !important;
   }
 }
-.scrollsection {
+.scrollsection,
+.footer {
   width: 100vw;
   background-color: #f88929;
   margin-top: 15vw;
@@ -447,7 +455,7 @@ p {
 }
 .scrollsection h1 span {
   color: white;
-  font-size: max(30px, 5vw);
+  font-size: max(30px, 4vw);
   line-height: 1.2;
 }
 .about {
@@ -539,6 +547,8 @@ p {
 
 .courses h1 {
   text-align: center;
+  line-height: 1.1;
+  margin-top: 20px;
 }
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -590,6 +600,9 @@ p {
     transform: rotate(360deg);
   }
 }
+.titleOfCard {
+  margin-top: 15vw;
+}
 
 .content {
   position: relative;
@@ -597,10 +610,10 @@ p {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   gap: 0.5rem;
-  padding: 2rem;
+  padding: 1rem;
   color: #000;
   z-index: 10;
   border-radius: 20px;
@@ -623,19 +636,24 @@ p {
 .coursesCards {
   display: grid;
   padding: 50px 5vw;
-  grid-template-rows: 500px;
+  grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  grid-auto-rows: 500px;
 }
 @media (max-width: 1050px) {
   .coursesCards {
     grid-template-columns: repeat(2, 1fr);
   }
+  .titleOfCard {
+    margin-top: 23vw;
+  }
 }
 @media (max-width: 700px) {
   .coursesCards {
     grid-template-columns: 1fr;
+  }
+  .titleOfCard {
+    margin-top: 40vw;
   }
 }
 .imagesdiv {
@@ -673,4 +691,187 @@ p {
   .content {
     padding: 2rem 10px;
   }
+}
+/* From Uiverse.io by adamgiebl */
+.input {
+  color: #2b2929;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.342);
+}
+
+.input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus + .input-border {
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  --width-of-input: 300px;
+}
+
+.input-alt {
+  font-size: 1.2rem;
+  padding-inline: 1em;
+  padding-block: 0.8em;
+}
+
+.input-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #ff6464 0%, #ffbf59 50%, #47c9ff 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.input-alt:focus + .input-border-alt {
+  width: 100%;
+}
+.contact {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+textarea {
+  resize: none;
+}
+.contact h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+/* From Uiverse.io by cssbuttons-io */
+.buttonincontact {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  margin-top: 20px;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: #ffa85c;
+}
+
+.front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
+  background: #f88929;
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.buttonincontact:hover {
+  filter: brightness(110%);
+}
+
+.buttonincontact:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.buttonincontact:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.buttonincontact:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.buttonincontact:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.buttonincontact:focus:not(:focus-visible) {
+  outline: none;
+}
+.footer {
+  margin-top: 20vw;
+  color: white !important;
+}
+.maininfodiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.maininfodiv img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10000px;
+  background-size: cover;
+}
+.maininfodiv h2 {
+  color: white;
+  font-size: 30px;
+}
+.linksinfooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 22px;
+  margin: 50px 0 0 0;
+}
+.linksinfooter a {
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.footer p {
+  color: rgba(255, 255, 255, 0.822);
+  text-align: center;
 }

@@ -26,9 +26,11 @@ import aboutimage from "./images/about image.png";
 import frontend from "./images/frontend.png";
 import backend from "./images/backend.png";
 import gd from "./images/gd.png";
-import wordc from "./images/wordc.png";
-import excelc from "./images/excelc.png";
+import officec from "./images/msOffice.png";
 import lang from "./images/lang.png";
+import dm from "./images/dm.png";
+import cs from "./images/cs.png";
+import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -218,20 +220,6 @@ function App() {
       },
     });
 
-    const text2 =
-      "Zaib Computer Center is your gateway to the digital world, located in Baldia Town, Karachi, Pakistan. We offer a comprehensive range of courses designed to equip you with the skills needed to excel in today's tech-driven environment.Whether you're aspiring to be a web developer, graphic designer, or office productivity expert, we've got you covered. Our curriculum includes web development (frontend and backend), Microsoft Office Suite (Word, Excel), graphic design tools (Photoshop, Canva), programming languages (Python), and much more. Join us to unlock your potential and build a successful career in the IT industry.";
-    const words2 = text2.split(" ");
-    const spanned2 = words2
-      .map((word) =>
-        word !== ""
-          ? word !== "covered."
-            ? `<span className="paraword3">${word}</span>`
-            : `<span className="paraword3">${word}</span> <br/><br/>`
-          : ""
-      )
-      .join(" ");
-    navigator.clipboard.writeText(spanned2);
-
     const abouttl = gsap.timeline({
       scrollTrigger: {
         trigger: ".about",
@@ -266,6 +254,9 @@ function App() {
       },
     });
   });
+  useEffect(() => {
+    console.log("rendered");
+  }, []);
   return (
     <>
       <nav className="navbar">
@@ -281,24 +272,24 @@ function App() {
         <section className="links">
           <ul>
             <li className="link">
-              <a>Home</a>
+              <a href="#mainpage">Home</a>
             </li>
             <li className="link">
-              <a>About</a>
+              <a href="#about">About</a>
             </li>
             <li className="link">
-              <a>Courses</a>
+              <a href="#courses">Courses</a>
             </li>
             <li className="link">
               <a>Projects Code</a>
             </li>
             <li className="link">
-              <a>Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </section>
       </nav>
-      <main className="mainpage">
+      <main className="mainpage" id="mainpage">
         <div className="leftSide">
           <h3>
             Learn Skills that matter.
@@ -498,7 +489,7 @@ function App() {
         </h1>
         <img src={wave} alt="wave" className="wave2" />
       </section>
-      <section className="about magicpattern">
+      <section className="about magicpattern" id="about">
         <div className="aboutleftSide">
           <h1 className="aboutheading">
             About Zaib Computer Center
@@ -610,112 +601,185 @@ function App() {
           <img src={aboutimage} className="aboutimage" alt="About us image" />
         </div>
       </section>
-      <section className="courses">
+      <section className="courses" id="courses">
         <h1>Courses</h1>
         <div className="coursesCards">
-          <div class="card">
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="content">
+          <div className="card">
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="content">
               <div className="imagesdiv">
                 <img src={frontend} alt="frontend" />
               </div>
-              <h2 class="titleOfCard">Frontend</h2>
+              <h2 className="titleOfCard">Frontend</h2>
               <p className="courseDesc">
                 Learn the basics of web development with HTML, CSS, and
                 JavaScript. Build dynamic and interactive user interfaces with
-                React. And learn to add complex animations using GSAP.
+                React. And learn to add complex and stunning animations using
+                GSAP.
               </p>
-              <span class="sub-title">4 Months</span>
+              <span className="sub-title">4 Months</span>
             </div>
           </div>
-          <div class="card">
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="content">
+          <div className="card">
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="content">
               <div className="imagesdiv">
                 <img src={backend} alt="backend" />
               </div>
-              <h2 class="titleOfCard">Backend</h2>
+              <h2 className="titleOfCard">Backend</h2>
               <p className="courseDesc">
                 Learn backend development with Node.js, Express, and MongoDB.
-                Build RESTful APIs with JWT Authentication. And learn to create
-                real time applications with Socket.io.
+                Build RESTful APIs with advanced security features of JWT
+                Authentication. And learn to create real time applications with
+                Socket.io.
               </p>
-              <span class="sub-title">6 Months</span>
+              <span className="sub-title">6 Months</span>
             </div>
           </div>
-          <div class="card">
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="content">
+          <div className="card">
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="content">
               <div className="imagesdiv">
                 <img src={gd} alt="Grapic Design" />
               </div>
-              <h2 class="titleOfCard">Graphic Design</h2>
+              <h2 className="titleOfCard">Graphic Design</h2>
               <p className="courseDesc">
-                Learn Graphic Design with Adobe Photoshop and Canva. Create
-                stunning looking Designs with Unique techniques and Design
+                Learn Graphic Design with Adobe Photoshop and Canva. After
+                completing the course, you will be able to stunning looking
+                Designs with Unique techniques, tips and tricks and Design
                 principles.
               </p>
-              <span class="sub-title">3 Months</span>
+              <span className="sub-title">3 Months</span>
             </div>
           </div>
-          <div class="card">
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="content">
+          <div className="card">
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="content">
               <div className="imagesdiv">
                 <img src={lang} alt="bProgramming" />
               </div>
-              <h2 class="titleOfCard">Programming</h2>
+              <h2 className="titleOfCard">Programming</h2>
               <p className="courseDesc">
                 Explore the fundamentals of programming with C, C++, and Python.
                 Develop problem-solving skills and write efficient code. Build
                 real-world applications across multiple platforms.
               </p>
-              <span class="sub-title">2 Months (per language)</span>
+              <span className="sub-title">2 Months (per language)</span>
             </div>
           </div>
-          <div class="card">
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="content">
+          <div className="card">
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="content">
               <div className="imagesdiv">
-                <img src={wordc} alt="MS Word" />
+                <img src={officec} alt="MS Word" />
               </div>
-              <h2 class="titleOfCard">MS Word</h2>
+              <h2 className="titleOfCard">MS Office</h2>
               <p className="courseDesc">
-                Master document creation with Microsoft Word. Learn advanced
-                formatting, templates, and collaboration tools. Enhance your
-                productivity with tips and tricks.
+                Master amazing document creation with Microsoft Office. Learn
+                advanced formatting in Word, Excel templates, and collaboration
+                tools. you will be able to enhance your productivity with
+                additional tips and tricks.
               </p>
-              <span class="sub-title">3 Months</span>
+              <span className="sub-title">3 Months</span>
             </div>
           </div>
-          <div class="card">
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="wave3"></div>
-            <div class="content">
+          <div className="card">
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="content">
               <div className="imagesdiv">
-                <img src={excelc} alt="MS Excel" />
+                <img src={cs} alt="MS Word" />
               </div>
-              <h2 class="titleOfCard">MS Excel</h2>
+              <h2 className="titleOfCard">Cyber Security</h2>
               <p className="courseDesc">
-                Dive into data management with Microsoft Excel. Understand
-                formulas, pivot tables, and data visualization. And make
-                informed decisions using advanced features.
+                Protect your digital assets with cybersecurity skills. Learn
+                threat detection, risk management, and encryption techniques.
+                Master defensive strategies to safeguard networks.
               </p>
-              <span class="sub-title">3 Months</span>
+              <span className="sub-title">3 Months</span>
+            </div>
+          </div>
+          <div className="card">
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="wave3"></div>
+            <div className="content">
+              <div className="imagesdiv">
+                <img src={dm} alt="MS Word" />
+              </div>
+              <h2 className="titleOfCard">Digital marketing</h2>
+              <p className="courseDesc">
+                Unlock the power of digital marketing. Learn strategies for
+                social media, SEO, and email campaigns. Master analytics tools
+                and content creation to boost your brand's online presence and
+                drive results.
+              </p>
+              <span className="sub-title">3 Months</span>
             </div>
           </div>
         </div>
+      </section>
+      <section className="contact" id="contact">
+        <h1>Contact Us</h1>
+        <div className="form-control">
+          <input
+            className="input input-alt"
+            placeholder="Name"
+            required=""
+            type="text"
+          />
+          <span className="input-border input-border-alt"></span>
+        </div>
+        <div className="form-control">
+          <input
+            className="input input-alt"
+            placeholder="email"
+            required=""
+            type="email"
+          />
+          <span className="input-border input-border-alt"></span>
+        </div>
+        <div className="form-control">
+          <textarea
+            className="input input-alt"
+            placeholder="Message"
+            required=""
+            type="text"
+            rows={5}
+          />
+          <span className="input-border input-border-alt"></span>
+        </div>
+        <button className="buttonincontact">
+          <span class="shadow"></span>
+          <span class="edge"></span>
+          <span class="front text">Submit</span>
+        </button>
+      </section>
+      <section className="footer">
+        <img src={wave} alt="wave" className="wave" />
+        <div className="maininfodiv">
+          <img src={logo} alt="logo" />
+          <h2>Zaib Computer Center</h2>
+        </div>
+        <div className="linksinfooter">
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#courses">Courses</a>
+          <a>Projects Code</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <p>© Zaib Computer Center, All rights reserved.</p>
       </section>
     </>
   );
